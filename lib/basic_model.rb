@@ -91,7 +91,7 @@ class BasicModel
   def self.view(database_name, view_name, options={})
     results = new(database_name, self.db(database_name).view(view_name, options))
     results.rows.each_with_index do |row, index|
-      results.rows[index] = new(database_name, row['value'])
+      results.rows[index] = new(database_name, row['value']) if row['value'].is_a? Hash
     end
     results
   end
