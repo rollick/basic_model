@@ -47,7 +47,7 @@ class BasicModel
       # Assumes existence of "couchdb_views" directory.
       # file_manager = CouchRest::FileManager.new(File.basename(full_url_to_database))
       # file_manager.push_views(File.join(Rails.root, "couchdb_views"))
-      system("couchapp push #{full_url_to_database}")
+      system("couchapp push db/app")
     end
     database
   end
